@@ -72,7 +72,7 @@ namespace Restaurant
         }
         public void Eat()
         {
-            Console.WriteLine("Client: Om-Nom-nom");
+            Console.WriteLine("Client: Om-Nom-nom!");
         }
         public void Pay(Order order)
         {
