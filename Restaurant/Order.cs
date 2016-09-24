@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    class Order
+    public class Order
     {
         List<OrderItem> orderItems = new List<OrderItem>();
         public List<OrderItem> OrderItes { get { return orderItems; } set { orderItems = value; } }
@@ -64,7 +64,7 @@ namespace Restaurant
         }
 
     }
-    class OrderItem
+    public class OrderItem
     {
         public TypeOfDish TypeOfDish { get; set; }
         public string Name { get; set; }

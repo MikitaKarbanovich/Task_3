@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    class Administrator:Person, CallWaiter
+    public class Administrator:Person, ICallWaiter
     {
         public void FindTable()
         {

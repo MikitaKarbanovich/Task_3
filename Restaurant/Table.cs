@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant.Rooms
 {
-    class Table
+    public class Table
     {
         public string NameOfTable { get; set; }
         public bool IsVacant { get; set; }

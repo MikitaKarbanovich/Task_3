@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant.Dishes
 {
-    class Dessert:Dish
+    public class Dessert:Dish
     {
         public int ShugarValue { get; set; }
         public Dessert(string name, double price,int decreaseHungerLevel,int shugarValue)

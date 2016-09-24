@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant.Dishes
 {
-    class Starter:Dish
+    public class Starter:Dish
     {
     }
 }

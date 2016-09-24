@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    class Menu
+    public class Menu
     {
         private List<Dessert> desserts = new List<Dessert>();
         public List<Dessert> Desserts { get { return desserts; } set { desserts = value; } }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    interface CallWaiter
+    public interface ICallWaiter
     {
         void CallWaiter();
     }

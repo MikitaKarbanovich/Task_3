@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant.Dishes
 {
-    class Drink:Dish
+    public class Drink:Dish
     {
         public double AlcPercentage { get; set; }
         public Drink(string name,double price, int decreaseHungerLevel, double alcPercentage)

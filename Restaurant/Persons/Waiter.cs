@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    class Waiter:Person
+    public class Waiter:Person
     {
         public Menu BringMenu()
         {

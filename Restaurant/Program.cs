@@ -15,9 +15,6 @@ namespace Restaurant
             Administrator admin = new Administrator();
             Waiter waiter = new Waiter();
             Cook cook = new Cook();
-            client.Money = 100;
-            client.Satisfaction = 0;
-            client.HungerLeverl=4;
             admin.SayHello();
             admin.AskTypeOfRoom();
             if (client.ChooseTypeOfRoom("standart") == 1)

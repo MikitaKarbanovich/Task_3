@@ -10,7 +10,6 @@ namespace Restaurant
     {
         public bool Cooking(Order order)
         {
-            int cookingTime=5;
             bool isCooked=true;
             foreach (OrderItem orderItem in order.OrderItes)
             {

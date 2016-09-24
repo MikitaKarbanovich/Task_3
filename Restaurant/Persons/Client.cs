@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
-    class Client:Person
+    public class Client:Person, ICallWaiter
     {
         int hungerLevel;
         public int HungerLeverl
