@@ -23,6 +23,22 @@ namespace UnitTests
             Assert.AreNotEqual(1, client.ChooseTypeOfRoom("standartmaybe"));
         }
         [TestMethod]
+        public void TestClientEat()
+        {
+            Client client = new Client(200, 0, 7);
+            Order order = new Order();
+            OrderItem orderItem1 = new OrderItem();
+            OrderItem orderItem2 = new OrderItem();
+            orderItem1.TypeOfDish = TypeOfDish.MainCourse;
+            orderItem1.Name = "Beef steak";
+            orderItem1.Quantity = 1;
+            orderItem2.TypeOfDish = TypeOfDish.Dessert;
+            orderItem2.Name = "Cake";
+            orderItem2.Quantity = 2;
+            order = client.MakeOrder(orderItem1, orderItem2);
+            Assert.AreEqual(1, client.Eat(order));
+        }
+        [TestMethod]
         public void TestStandartRoomConstructor()
         {
             RoomStandart standartRoom = new RoomStandart();
@@ -36,6 +52,22 @@ namespace UnitTests
         {
             RoomStandart standartRoom = new RoomStandart();
             Assert.AreEqual(0, standartRoom.ChooseFreeTable());
+        }
+        [TestMethod]
+        public void TestClientMakeOrder()
+        {
+            Order order = new Order();
+            Client client = new Client(200, 0, 4);
+            OrderItem orderItem1 = new OrderItem();
+            OrderItem orderItem2 = new OrderItem();
+            orderItem1.TypeOfDish = TypeOfDish.MainCourse;
+            orderItem1.Name = "Beef steak";
+            orderItem1.Quantity = 1;
+            orderItem2.TypeOfDish = TypeOfDish.Dessert;
+            orderItem2.Name = "Cake";
+            orderItem2.Quantity = 2;
+            order = client.MakeOrder(orderItem1, orderItem2);
+            Assert.AreEqual(orderItem1, order.OrderItes[0]);
         }
     }
 }

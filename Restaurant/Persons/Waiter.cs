@@ -11,11 +11,12 @@ namespace Restaurant
         public Menu BringMenu(int numberOfTable)
         {
             Menu menu = new Menu();
+            menu.ShowAllPossition();
             return menu;
         }
         public Order TakeOrder(Order order, int numberOfTable)
         {
-            Console.WriteLine("Take order to cook");
+            Console.WriteLine("Waiter take order to cook");
             return order;
         }
         public void BringDish(int numberOfTable)

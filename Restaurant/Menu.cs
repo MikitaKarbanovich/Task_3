@@ -34,6 +34,7 @@ namespace Restaurant
         }
         public void ShowAllPossition()
         {
+            Console.WriteLine("\n>>> M E N U <<<");
             Console.WriteLine("Desserts:");
             foreach (Dessert dessert in this.Desserts)
             {
@@ -50,7 +51,7 @@ namespace Restaurant
             {
                 Console.WriteLine("Name: {0}| Price: {1}| Type of meat: {2}", mainCourse.Name, mainCourse.Price, mainCourse.TypeOfMeat);
             }
-
+            Console.WriteLine("\n");
         }
     }
 }

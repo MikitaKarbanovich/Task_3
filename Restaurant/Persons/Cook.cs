@@ -13,7 +13,7 @@ namespace Restaurant
             bool isCooked=true;
             foreach (OrderItem orderItem in order.OrderItes)
             {
-                Console.WriteLine("Cook is cooking  {0} [{1}]", orderItem.Name, orderItem.TypeOfDish);
+                Console.WriteLine("Cook: is cooking  {0} [{1}]", orderItem.Name, orderItem.TypeOfDish);
             }
             return isCooked;
         }

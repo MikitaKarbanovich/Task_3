@@ -62,28 +62,20 @@ namespace Restaurant
         {
             Console.WriteLine("Client: Waiter, please go to me.");
         }
-        public Order MakeOrder(Menu menu)
+        public Order MakeOrder(OrderItem orderItem, OrderItem orderItem1)
         {
-            menu.ShowAllPossition();
             Order order = new Order();
-            OrderItem orderItem = new OrderItem();
-            OrderItem orderItem1 = new OrderItem();
-            orderItem1.TypeOfDish = TypeOfDish.MainCourse;
-            orderItem1.Name = "Beef steak";
-            orderItem1.Quantity = 1;
-            orderItem.TypeOfDish = TypeOfDish.Dessert;
-            orderItem.Name = "Cake";
-            orderItem.Quantity = 2;
             order.OrderItes.Add(orderItem);
             order.OrderItes.Add(orderItem1);
             return order;
         }
-        public void Eat(Order order)
+        public int Eat(Order order)
         {
             
             this.HungerLeverl= (this.HungerLeverl - order.OrderHungerLevel());
             Console.WriteLine("Client: Om-Nom-nom!");
             Console.WriteLine(this.HungerLeverl);
+            return this.HungerLeverl;
         }
         public double Pay(Order order)
         {
