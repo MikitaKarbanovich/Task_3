@@ -20,22 +20,18 @@ namespace Restaurant
             get { return hungerLevel; }
             set
             {
-                if (value > 0 && value < 11)
+                if (value >= 0 && value <= 10)
                 {
                     hungerLevel = value;
                 }
-                else
+                else if (value <= 0)
                 {
-                    if (hungerLevel < 0)
-                    {
-                        hungerLevel = 0;
-                    }
-                    else
-                    {
-                        hungerLevel = 10;
-                    }
+                    hungerLevel = 0;
                 }
-
+                else if (value >= 10)
+                {
+                    hungerLevel = 10;
+                }
             }
         }
         public Client(double money, int satisfaction, int hungryLevel)
@@ -82,9 +78,12 @@ namespace Restaurant
             order.OrderItes.Add(orderItem1);
             return order;
         }
-        public void Eat()
+        public void Eat(Order order)
         {
+            
+            this.HungerLeverl= (this.HungerLeverl - order.OrderHungerLevel());
             Console.WriteLine("Client: Om-Nom-nom!");
+            Console.WriteLine(this.HungerLeverl);
         }
         public double Pay(Order order)
         {

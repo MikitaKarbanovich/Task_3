@@ -32,7 +32,7 @@ namespace Restaurant
                 isCooked = cook.Cooking(order);
                 if (isCooked)
                 {
-                    client.Eat();
+                    client.Eat(order);
                     double payment = client.Pay(order);
                     waiter.TakePayment(payment, numberOfTable);
                 }
