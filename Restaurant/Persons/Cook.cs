@@ -10,11 +10,11 @@ namespace Restaurant
     {
         public bool Cooking(Order order)
         {
-            bool isCooked=true;
             foreach (OrderItem orderItem in order.OrderItes)
             {
                 Console.WriteLine("Cook: is cooking  {0} [{1}]", orderItem.Name, orderItem.TypeOfDish);
             }
+            bool isCooked = true;
             return isCooked;
         }
     }

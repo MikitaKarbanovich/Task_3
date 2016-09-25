@@ -19,7 +19,7 @@ namespace Restaurant.Rooms
         }
         public int ChooseFreeTable()
         {
-            int counter = -1;
+            int counter = 0;
             foreach (Table table in this.Tables)
             {
                 counter++;
@@ -30,7 +30,7 @@ namespace Restaurant.Rooms
                     return counter;
                 }
             }
-            return -1;
+            return 0;
         }
     }
 }

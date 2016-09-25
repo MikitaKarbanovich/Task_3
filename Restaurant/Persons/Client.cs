@@ -60,7 +60,7 @@ namespace Restaurant
         }
         public void CallWaiter(int numberOfTable)
         {
-            Console.WriteLine("Client: Waiter, please go to me.");
+            Console.WriteLine("Client: Waiter, please go to me, table № {0}", numberOfTable);
         }
         public Order MakeOrder(OrderItem orderItem, OrderItem orderItem1)
         {
@@ -72,16 +72,15 @@ namespace Restaurant
         public int Eat(Order order)
         {
             
-            this.HungerLeverl= (this.HungerLeverl - order.OrderHungerLevel());
+            this.HungerLeverl= (this.HungerLeverl - order.HungerLevelCalculation());
             Console.WriteLine("Client: Om-Nom-nom!");
-            Console.WriteLine(this.HungerLeverl);
             return this.HungerLeverl;
         }
         public double Pay(Order order)
         {
-            this.Money=this.Money- order.OrderCalculation();
-            Console.WriteLine("Client: I pay {0}$ and My money is  {1}$", order.OrderCalculation(), this.Money);
-            return order.OrderCalculation();
+            this.Money=this.Money- order.PaymentCalculation();
+            Console.WriteLine("Client: I pay {0}$ and My money is  {1}$", order.PaymentCalculation(), this.Money);
+            return order.PaymentCalculation();
         }
     }
 }

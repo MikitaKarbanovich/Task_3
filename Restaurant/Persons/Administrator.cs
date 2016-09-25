@@ -8,10 +8,6 @@ namespace Restaurant
 {
     public class Administrator:Person, ICallWaiter
     {
-        public void FindTable()
-        {
-
-        }
         public void SayHello()
         {
             Console.WriteLine("Administrator: Hello dear client!");

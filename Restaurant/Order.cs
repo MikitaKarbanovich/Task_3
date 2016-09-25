@@ -12,7 +12,7 @@ namespace Restaurant
         List<OrderItem> orderItems = new List<OrderItem>();
         public List<OrderItem> OrderItes { get { return orderItems; } set { orderItems = value; } }
 
-        public double OrderCalculation()
+        public double PaymentCalculation()
         {
             Menu menu = new Menu();
             double sumOfBill=0;
@@ -62,7 +62,7 @@ namespace Restaurant
             }
             return sumOfBill;
         }
-        public int OrderHungerLevel()
+        public int HungerLevelCalculation()
         {
             Menu menu = new Menu();
             int hungerLevel=0;
