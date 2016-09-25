@@ -13,9 +13,9 @@ namespace Restaurant
         {
             Client client = new Client(200,0,4);
             Administrator admin = new Administrator(0,0,10);
-            Waiter waiter = new Waiter(0,0);
-            Cook cook = new Cook(0,0);
-            Console.WriteLine("Our client's hunger level is {0}, he/she has {1}$ money and his/her satisfaction is {2}.",client.HungerLeverl, client.Money,client.Satisfaction);
+            Waiter waiter = new Waiter(0,0,1);
+            Cook cook = new Cook(0,0,1);
+            Console.WriteLine($"Our client's hunger level is {client.HungerLeverl}, he/she has {client.Money}$ money and his/her satisfaction is {client.Satisfaction}.");
             client.Satisfaction += admin.SayHello();
             admin.AskTypeOfRoom();
             if (client.ChooseTypeOfRoom("standart") == 1)

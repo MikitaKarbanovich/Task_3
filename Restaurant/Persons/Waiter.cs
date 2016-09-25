@@ -8,8 +8,10 @@ namespace Restaurant
 {
     public class Waiter:Person
     {
-        public Waiter(decimal money, int satisfaction) : base(money, satisfaction)
+        public int Speed { get; set; }
+        public Waiter(decimal money, int satisfaction, int speed) : base(money, satisfaction)
         {
+            Speed = speed;
         }
 
         public Menu BringMenu(int numberOfTable)
