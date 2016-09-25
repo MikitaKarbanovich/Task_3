@@ -8,6 +8,6 @@ namespace Restaurant
 {
     public interface ICallWaiter
     {
-        void CallWaiter();
+        void CallWaiter(int numberOfTable);
     }
 }

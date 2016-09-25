@@ -8,19 +8,25 @@ namespace Restaurant
 {
     public class Waiter:Person
     {
-        public Menu BringMenu()
+        public Menu BringMenu(int numberOfTable)
         {
             Menu menu = new Menu();
             return menu;
         }
-        public Order TakeOrder(Order order)
+        public Order TakeOrder(Order order, int numberOfTable)
         {
             Console.WriteLine("Take order to cook");
             return order;
         }
-        public void BringDish()
+        public void BringDish(int numberOfTable)
         {
-
+            //
         }
+        public void TakePayment(double payment,int numberOfTable)
+        {
+            this.Money = payment;
+            Console.WriteLine("Waiter: I take payment {0}$ and My money is {1}$", payment, this.Money);
+        }
+
     }
 }

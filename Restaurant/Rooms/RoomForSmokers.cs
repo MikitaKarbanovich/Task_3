@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Restaurant.Rooms
 {
-    class RoomForSmokers:RoomStandart
+    public class RoomForSmokers:RoomStandart
     {
     }
 }

@@ -20,35 +20,24 @@ namespace Restaurant
             if (client.ChooseTypeOfRoom("standart") == 1)
             {
                 RoomStandart standartRoom = new RoomStandart();
-                foreach (Table table in standartRoom.Tables)
+                int numberOfTable=standartRoom.ChooseFreeTable();
+                Console.WriteLine(numberOfTable);
+                admin.CallWaiter(numberOfTable);
+                Menu menu = new Menu();
+                Order order;
+                menu = waiter.BringMenu(numberOfTable);
+                order = client.MakeOrder(menu);
+                waiter.TakeOrder(order, numberOfTable);
+                bool isCooked;
+                isCooked = cook.Cooking(order);
+                if (isCooked)
                 {
-                    if (table.IsVacant)
-                    {
-                        Console.WriteLine("Table № {0} choosed by Client",table.NameOfTable);
-                        table.IsVacant = false;
-                        break;
-                    }
+                    client.Eat();
+                    double payment = client.Pay(order);
+                    waiter.TakePayment(payment, numberOfTable);
                 }
-                foreach (Table table in standartRoom.Tables)
-                {
-                    
-                        Console.WriteLine("Table № {0} in status  {1}", table.NameOfTable,table.IsVacant);
-                }
+                Console.ReadKey();
             }
-            admin.CallWaiter();
-            Menu menu = new Menu();
-            Order order;
-            menu=waiter.BringMenu();
-            order=client.MakeOrder(menu);
-            waiter.TakeOrder(order);
-            bool isCooked;
-            isCooked=cook.Cooking(order);
-            if (isCooked)
-            {
-                client.Eat();
-                client.Pay(order);
-            }
-            Console.ReadKey();
         }
     }
 }

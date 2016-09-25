@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
+    public enum TypeOfRoom
+    {
+        Standart = 1,
+        ForSmokers
+    }
     public class Client:Person, ICallWaiter
     {
         int hungerLevel;
@@ -21,7 +26,14 @@ namespace Restaurant
                 }
                 else
                 {
-                    Console.WriteLine("");
+                    if (hungerLevel < 0)
+                    {
+                        hungerLevel = 0;
+                    }
+                    else
+                    {
+                        hungerLevel = 10;
+                    }
                 }
 
             }
@@ -34,15 +46,15 @@ namespace Restaurant
         }
         public int ChooseTypeOfRoom(string typeOfRoom)
         {
-            if (typeOfRoom.Equals("standart"))
+            if (typeOfRoom.ToLower().Equals("standart"))
             {
-                Console.WriteLine("Client: 1");
-                return 1;
+                Console.WriteLine("Client: standart");
+                return (int)TypeOfRoom.Standart;
             }
-            else if (typeOfRoom.Equals("forsmokers"))
+            else if (typeOfRoom.ToLower().Equals("forsmokers"))
             {
-                Console.WriteLine("Client: 2");
-                return 2;
+                Console.WriteLine("Client: forsmokers");
+                return (int)TypeOfRoom.ForSmokers;
             }
             else
             {
@@ -50,7 +62,7 @@ namespace Restaurant
                 return 0;
             }
         }
-        public void CallWaiter()
+        public void CallWaiter(int numberOfTable)
         {
             Console.WriteLine("Client: Waiter, please go to me.");
         }
@@ -74,9 +86,11 @@ namespace Restaurant
         {
             Console.WriteLine("Client: Om-Nom-nom!");
         }
-        public void Pay(Order order)
+        public double Pay(Order order)
         {
-            Console.WriteLine("Client: I pay {0}$", order.OrderCalculation());
+            this.Money=this.Money- order.OrderCalculation();
+            Console.WriteLine("Client: I pay {0}$ and My money is  {1}$", order.OrderCalculation(), this.Money);
+            return order.OrderCalculation();
         }
     }
 }

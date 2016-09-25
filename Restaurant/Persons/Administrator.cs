@@ -20,9 +20,9 @@ namespace Restaurant
         {
             Console.WriteLine("Administrator: You can choose one of two types of the room: 'standart' or 'forsmokers'. Please choose.");
         }
-        public void CallWaiter()
+        public void CallWaiter(int numberOfTable)
         {
-            Console.WriteLine("Administrator: Waiter, please go to client");
+            Console.WriteLine("Administrator: Waiter, please go to client, table № {0}",numberOfTable);
         }
     }
 }
