@@ -9,7 +9,13 @@ namespace Restaurant.Dishes
     public abstract class Dish
     {
         public string Name { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         public int DecreaseHungerLevel { get; set; }
+        public Dish(string name, decimal price, int decreaseHungerLevel)
+        {
+            Name = name;
+            Price = price;
+            DecreaseHungerLevel = decreaseHungerLevel;
+        }
     }
 }

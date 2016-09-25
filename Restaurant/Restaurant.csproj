@@ -51,8 +51,7 @@
     <Compile Include="Dishes\Dish.cs" />
     <Compile Include="Dishes\Drink.cs" />
     <Compile Include="Dishes\MainCourse.cs" />
-    <Compile Include="Dishes\Starter.cs" />
-    <Compile Include="ICallWaiter.cs" />
+    <Compile Include="Persons\ICallWaiter.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Persons\Administrator.cs" />

@@ -34,12 +34,11 @@ namespace Restaurant
                 }
             }
         }
-        public Client(double money, int satisfaction, int hungryLevel)
+        public Client(decimal money, int satisfaction, int hungryLevel): base (money,satisfaction)
         {
-            Money = money;
-            Satisfaction = satisfaction;
             HungerLeverl = hungryLevel;
         }
+
         public int ChooseTypeOfRoom(string typeOfRoom)
         {
             if (typeOfRoom.ToLower().Equals("standart"))
@@ -76,7 +75,7 @@ namespace Restaurant
             Console.WriteLine("Client: Om-Nom-nom!");
             return this.HungerLeverl;
         }
-        public double Pay(Order order)
+        public decimal Pay(Order order)
         {
             this.Money=this.Money- order.PaymentCalculation();
             Console.WriteLine("Client: I pay {0}$ and My money is  {1}$", order.PaymentCalculation(), this.Money);

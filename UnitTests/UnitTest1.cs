@@ -57,7 +57,7 @@ namespace UnitTests
             orderItem2.Quantity = 2;
             //payment for test order is 21.5
             order = client.MakeOrder(orderItem1, orderItem2);
-            Assert.AreEqual(21.5, order.PaymentCalculation());
+            Assert.AreEqual(21.5m, order.PaymentCalculation());
         }
         [TestMethod]
         public void TestOrderHungerCalculation()
@@ -120,7 +120,7 @@ namespace UnitTests
         public void TestWaiterTakeOrder()
         {
             Order order = new Order();
-            Waiter waiter = new Waiter();
+            Waiter waiter = new Waiter(0,0);
             Assert.AreEqual(order, waiter.TakeOrder(order,3));
         }
     }

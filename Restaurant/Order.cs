@@ -12,10 +12,10 @@ namespace Restaurant
         List<OrderItem> orderItems = new List<OrderItem>();
         public List<OrderItem> OrderItes { get { return orderItems; } set { orderItems = value; } }
 
-        public double PaymentCalculation()
+        public decimal PaymentCalculation()
         {
             Menu menu = new Menu();
-            double sumOfBill=0;
+            decimal sumOfBill =0;
             foreach (OrderItem orderItem in this.OrderItes)
             {
                 switch (orderItem.TypeOfDish)
@@ -44,15 +44,6 @@ namespace Restaurant
                             if (mainCourse.Name.Equals(orderItem.Name))
                             {
                                 sumOfBill += mainCourse.Price * orderItem.Quantity;
-                            }
-                        }
-                        break;
-                    case TypeOfDish.Starter:
-                        foreach (Starter starter in menu.Starters)
-                        {
-                            if (starter.Name.Equals(orderItem.Name))
-                            {
-                                sumOfBill += starter.Price * orderItem.Quantity;
                             }
                         }
                         break;
@@ -94,15 +85,6 @@ namespace Restaurant
                             if (mainCourse.Name.Equals(orderItem.Name))
                             {
                                 hungerLevel += mainCourse.DecreaseHungerLevel * orderItem.Quantity;
-                            }
-                        }
-                        break;
-                    case TypeOfDish.Starter:
-                        foreach (Starter starter in menu.Starters)
-                        {
-                            if (starter.Name.Equals(orderItem.Name))
-                            {
-                                hungerLevel += starter.DecreaseHungerLevel * orderItem.Quantity;
                             }
                         }
                         break;

@@ -8,6 +8,10 @@ namespace Restaurant
 {
     class Cook:Person
     {
+        public Cook(decimal money, int satisfaction) : base(money, satisfaction)
+        {
+        }
+
         public bool Cooking(Order order)
         {
             foreach (OrderItem orderItem in order.OrderItes)

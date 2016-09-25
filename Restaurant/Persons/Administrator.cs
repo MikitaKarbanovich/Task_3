@@ -8,9 +8,17 @@ namespace Restaurant
 {
     public class Administrator:Person, ICallWaiter
     {
-        public void SayHello()
+        const int SAYHELLOSATISFACTION = 1;
+        public int CommunicationSkill { get; set; }
+        public Administrator(decimal money, int satisfaction, int communicationSkill) : base(money, satisfaction)
+        {
+            CommunicationSkill = communicationSkill;
+        }
+
+        public int SayHello()
         {
             Console.WriteLine("Administrator: Hello dear client!");
+            return SAYHELLOSATISFACTION;
         }
         public void AskTypeOfRoom()
         {

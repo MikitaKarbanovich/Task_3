@@ -12,11 +12,11 @@ namespace Restaurant
         static void Main(string[] args)
         {
             Client client = new Client(200,0,4);
-            Administrator admin = new Administrator();
-            Waiter waiter = new Waiter();
-            Cook cook = new Cook();
+            Administrator admin = new Administrator(0,0,10);
+            Waiter waiter = new Waiter(0,0);
+            Cook cook = new Cook(0,0);
             Console.WriteLine("Our client's hunger level is {0}, he/she has {1}$ money and his/her satisfaction is {2}.",client.HungerLeverl, client.Money,client.Satisfaction);
-            admin.SayHello();
+            client.Satisfaction += admin.SayHello();
             admin.AskTypeOfRoom();
             if (client.ChooseTypeOfRoom("standart") == 1)
             {
@@ -42,7 +42,7 @@ namespace Restaurant
                 {
                     client.Eat(order);
                     Console.WriteLine("After eating client hunger level is {0}", client.Eat(order));
-                    double payment = client.Pay(order);
+                    decimal payment = client.Pay(order);
                     waiter.TakePayment(payment, numberOfTable);
                 }
                 Console.ReadKey();

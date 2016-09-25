@@ -15,17 +15,15 @@ namespace Restaurant
         public List<Drink> Drinks { get { return drinks; } set { drinks = value; } }
         private List<MainCourse> mainCourses = new List<MainCourse>();
         public List<MainCourse> MainCourses { get { return mainCourses; } set { mainCourses = value; } }
-        private List<Starter> starters = new List<Starter>();
-        public List<Starter> Starters { get { return starters; } set { starters = value; } }
 
 
         public Menu()
         {
             Dessert cake = new Dessert("Cake", 5, 1, 1);
             Dessert iceCream = new Dessert("Ice cream", 2, 1, 1);
-            Drink pepsi = new Drink("Pepsi", 0.5,1,0);
-            Drink lidskoe = new Drink("Beer Lidskoe", 1.5, 1, 4.5);
-            MainCourse beefSteak = new MainCourse("Beef steak", 11.5, 4,"beef");
+            Drink pepsi = new Drink("Pepsi", 0.5m,1,0);
+            Drink lidskoe = new Drink("Beer Lidskoe", 1.5m, 1, 4.5);
+            MainCourse beefSteak = new MainCourse("Beef steak", 11.5m, 4,"beef");
             Desserts.Add(cake);
             Desserts.Add(iceCream);
             Drinks.Add(pepsi);

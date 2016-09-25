@@ -9,11 +9,8 @@ namespace Restaurant.Dishes
     public class Dessert:Dish
     {
         public int ShugarValue { get; set; }
-        public Dessert(string name, double price,int decreaseHungerLevel,int shugarValue)
+        public Dessert(string name, decimal price,int decreaseHungerLevel,int shugarValue):base(name,price, decreaseHungerLevel)
         {
-            Name = name;
-            Price = price;
-            DecreaseHungerLevel = decreaseHungerLevel;
             ShugarValue = shugarValue;
         }
     }

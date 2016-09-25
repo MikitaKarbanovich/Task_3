@@ -9,11 +9,8 @@ namespace Restaurant.Dishes
     public class Drink:Dish
     {
         public double AlcPercentage { get; set; }
-        public Drink(string name,double price, int decreaseHungerLevel, double alcPercentage)
+        public Drink(string name, decimal price, int decreaseHungerLevel, double alcPercentage) : base(name, price, decreaseHungerLevel)
         {
-            Name = name;
-            Price = price;
-            DecreaseHungerLevel = decreaseHungerLevel;
             AlcPercentage = alcPercentage;
         }
     }

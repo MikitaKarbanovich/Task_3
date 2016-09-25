@@ -8,6 +8,10 @@ namespace Restaurant
 {
     public class Waiter:Person
     {
+        public Waiter(decimal money, int satisfaction) : base(money, satisfaction)
+        {
+        }
+
         public Menu BringMenu(int numberOfTable)
         {
             Menu menu = new Menu();
@@ -23,7 +27,7 @@ namespace Restaurant
         {
             //
         }
-        public void TakePayment(double payment,int numberOfTable)
+        public void TakePayment(decimal payment,int numberOfTable)
         {
             this.Money = payment;
             Console.WriteLine("Waiter: I take payment {0}$ and My money is {1}$", payment, this.Money);

@@ -9,6 +9,11 @@ namespace Restaurant
    public abstract class  Person
     {
         public int Satisfaction { get; set; }
-        public double Money { get; set; }
+        public decimal Money { get; set; }
+        public Person(decimal money, int satisfaction)
+        {
+            Money = money;
+            Satisfaction = satisfaction;
+        }
     }
 }

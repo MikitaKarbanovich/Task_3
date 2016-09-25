@@ -9,11 +9,8 @@ namespace Restaurant.Dishes
     public class MainCourse:Dish
     {
         public string TypeOfMeat { get; set; }
-        public MainCourse(string name, double price, int decreaseHungerLevel, string typeOfMeat)
+        public MainCourse(string name, decimal price, int decreaseHungerLevel, string typeOfMeat) : base(name, price, decreaseHungerLevel)
         {
-            Name = name;
-            Price = price;
-            DecreaseHungerLevel = decreaseHungerLevel;
             TypeOfMeat = typeOfMeat;
         }
     }
