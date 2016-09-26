@@ -7,6 +7,19 @@ using System.Threading.Tasks;
 
 namespace Restaurant
 {
+    public class OrderItem
+    {
+        public TypeOfDish TypeOfDish { get; set; }
+        public string Name { get; set; }
+        public int Quantity { get; set; }
+    }
+    public enum TypeOfDish
+    {
+        Dessert = 1,
+        Drink,
+        MainCourse,
+        Starter
+    }
     public class Order
     {
         List<OrderItem> orderItems = new List<OrderItem>();
@@ -96,18 +109,5 @@ namespace Restaurant
             return hungerLevel;
         }
 
-    }
-    public class OrderItem
-    {
-        public TypeOfDish TypeOfDish { get; set; }
-        public string Name { get; set; }
-        public int Quantity { get; set; }
-    }
-    public enum TypeOfDish
-    {
-        Dessert = 1,
-        Drink,
-        MainCourse,
-        Starter
     }
 }

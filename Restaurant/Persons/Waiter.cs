@@ -31,7 +31,7 @@ namespace Restaurant
         }
         public void TakePayment(decimal payment,int numberOfTable)
         {
-            this.Money = payment;
+            this.Money += payment;
             Console.WriteLine("Waiter: I take payment {0}$ and My money is {1}$", payment, this.Money);
         }
 
