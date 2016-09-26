@@ -61,11 +61,13 @@ namespace Restaurant
         {
             Console.WriteLine("Client: Waiter, please go to me, table № {0}", numberOfTable);
         }
-        public Order MakeOrder(OrderItem orderItem, OrderItem orderItem1)
+        public Order MakeOrder(params OrderItem [] orderItem)
         {
             Order order = new Order();
-            order.OrderItes.Add(orderItem);
-            order.OrderItes.Add(orderItem1);
+            for (int i = 0; i < orderItem.Length; i++)
+            {
+                order.OrderItes.Add(orderItem[i]);
+            }
             return order;
         }
         public int Eat(Order order)

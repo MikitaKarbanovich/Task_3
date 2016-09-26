@@ -15,7 +15,7 @@ namespace Restaurant
             CommunicationSkill = communicationSkill;
         }
 
-        public int SayHello()
+        public int SayHelloAndAddSatisfaction()
         {
             Console.WriteLine("Administrator: Hello dear client!");
             return SAYHELLOSATISFACTION;

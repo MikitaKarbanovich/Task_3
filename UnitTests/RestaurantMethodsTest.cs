@@ -8,17 +8,19 @@ namespace UnitTests
     [TestClass]
     public class RestaurantMethodsTest
     {
-        RoomStandart standartRoom;
+        Administrator admin;
         Client client;
         Order order;
         Waiter waiter;
+        RoomStandart standartRoom;
         OrderItem orderItem1;
         OrderItem orderItem2;
 
         [TestInitialize()]
         public void TestInitialize()
         {
-            client = new Client(200m, 0, 5);
+            admin = new Administrator(0, 0, 10);
+            client = new Client(200m, 5, 5);
             order = new Order();
             waiter = new Waiter(10m,2,2);
             standartRoom = new RoomStandart();
@@ -121,6 +123,13 @@ namespace UnitTests
             // at start waiter have 10$, then he take payment 100$
             waiter.TakePayment(100m, 3);
             Assert.AreEqual(110m, waiter.Money);
+        }
+        [TestMethod]
+        public void TestAdminSayHelloAndAddSatisfactionToClient()
+        {
+            client.Satisfaction += admin.SayHelloAndAddSatisfaction();
+            Assert.AreEqual(6, client.Satisfaction);
+            Assert.AreEqual(1, admin.SayHelloAndAddSatisfaction());
         }
     }
 }

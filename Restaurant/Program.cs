@@ -16,7 +16,7 @@ namespace Restaurant
             Waiter waiter = new Waiter(0,0,1);
             Cook cook = new Cook(0,0,1);
             Console.WriteLine($"Our client's hunger level is {client.HungerLeverl}, he/she has {client.Money}$ money and his/her satisfaction is {client.Satisfaction}.");
-            client.Satisfaction += admin.SayHello();
+            client.Satisfaction += admin.SayHelloAndAddSatisfaction();
             admin.AskTypeOfRoom();
             if (client.ChooseTypeOfRoom("standart") == 1)
             {
@@ -41,7 +41,7 @@ namespace Restaurant
                 if (isCooked)
                 {
                     client.Eat(order);
-                    Console.WriteLine("After eating client hunger level is {0}", client.Eat(order));
+                    Console.WriteLine("After eating client hunger level is {0}", client.HungerLeverl);
                     decimal payment = client.Pay(order);
                     waiter.TakePayment(payment, numberOfTable);
                 }
